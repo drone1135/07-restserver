@@ -1,3 +1,4 @@
+require('./config/config');
 const express = require('express');
 const app = express();
 
@@ -13,7 +14,20 @@ app.get('/usuario', (req, res) => {
 });
 
 app.post('/usuario', (req, res) => {
-    res.json('post usuario');
+    let body = req.body;
+
+    if (body.nombre === undefined) {
+        res.status(400).json({
+            ok: false,
+            mensaje: "El nombre es necesario"
+        });
+    } else {
+        res.json({
+            persona: body
+        });
+    }
+
+
 });
 
 app.put('/usuario/:id', (req, res) => {
@@ -30,6 +44,6 @@ app.delete('/usuario/:id', (req, res) => {
     });
 });
 
-app.listen(3000, () => {
-    console.log('Escuchando puerto: ', 3000);
+app.listen(process.env.PORT, () => {
+    console.log('Escuchando puerto: ', process.env.PORT);
 })
