@@ -1,10 +1,14 @@
-const bodyParser = require('body-parser');
 const express = require('express');
+
 const bcrypt = require('bcrypt');
 const _ = require('underscore');
-const app = express();
+
 const Usuario = require('../models/usuario');
 const { verificaToken } = require('../middlewares/autenticacion');
+const bodyParser = require('body-parser');
+const app = express();
+
+
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -35,9 +39,7 @@ app.get('/usuario', verificaToken, (req, res) => {
 
             });
 
-        })
-
-
+        });
 });
 
 app.post('/usuario', (req, res) => {
