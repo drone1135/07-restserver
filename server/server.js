@@ -3,7 +3,10 @@ const express = require('express');
 const mongoose = require('mongoose');
 
 const app = express();
-app.use(require('./routes/usuario'));
+
+//Configuración global de rutas
+app.use(require('./routes/index'));
+
 const bodyParser = require('body-parser');
 
 
