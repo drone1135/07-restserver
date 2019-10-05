@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-const bodyParser = require('body-parser');
-const express = require('express');
-const bcrypt = require('bcrypt');
-const _ = require('underscore');
-const app = express();
-const Usuario = require('../models/usuario');
-
-app.use(bodyParser.urlencoded({ extended: false }));
-
-app.get('/usuario', (req, res) => {
-=======
 const express = require('express');
 
 const bcrypt = require('bcrypt');
@@ -25,7 +13,6 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/usuario', verificaToken, (req, res) => {
->>>>>>> e4ed4f09c8ac882875dd04892aa28ccca8533286
 
     let desde = req.query.desde || 0;
     desde = Number(desde);
@@ -52,13 +39,7 @@ app.get('/usuario', verificaToken, (req, res) => {
 
             });
 
-<<<<<<< HEAD
-        })
-
-
-=======
         });
->>>>>>> e4ed4f09c8ac882875dd04892aa28ccca8533286
 });
 
 app.post('/usuario', (req, res) => {
