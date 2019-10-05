@@ -13,7 +13,12 @@
         "bcrypt": "^3.0.6",
         "body-parser": "^1.19.0",
         "express": "^4.17.1",
+<<<<<<< HEAD
         "mongoose": "^5.7.3",
+=======
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^5.7.1",
+>>>>>>> e4ed4f09c8ac882875dd04892aa28ccca8533286
         "mongoose-unique-validator": "^2.0.3",
         "nodemon": "^1.19.2",
         "underscore": "^1.9.1"
