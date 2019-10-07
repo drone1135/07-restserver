@@ -14,6 +14,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/usuario', verificaToken, (req, res) => {
 
+    return res.json({
+        usuario: req.usuario,
+        nombre: req.usuario.nombre,
+        correo: req.usuario.correo
+    });
+
     let desde = req.query.desde || 0;
     desde = Number(desde);
 
