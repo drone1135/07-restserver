@@ -21,5 +21,29 @@ let verificaToken = (req, res, next) => {
 
     });
 };
+//====================
+//VERIFICAR Role Amin
+//====================
+let verificaAdmin_Role = (req, res, next) => {
 
-module.exports = { verificaToken }
+
+    let usuario = req.usuario;
+
+
+    if (usuario.role === 'USER_ROLE') {
+        return res.status(401).json({
+            ok: false,
+            err: {
+                message: 'El usuario no es administrador'
+            }
+        });
+    } else { next(); }
+
+
+
+
+
+
+};
+
+module.exports = { verificaToken, verificaAdmin_Role }

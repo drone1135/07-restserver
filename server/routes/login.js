@@ -9,7 +9,7 @@ app.post('/login', (req, res) => {
 
     let body = req.body;
 
-    Usuario.findOne({ correo: body.correo }, (err, usuarioDB) => {
+    Usuario.findOne({ correo: body.correo, nombre: body.nombre }, (err, usuarioDB) => {
         if (err) {
             return res.status(500).json({
                 ok: false,
