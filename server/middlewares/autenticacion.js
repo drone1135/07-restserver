@@ -39,11 +39,6 @@ let verificaAdmin_Role = (req, res, next) => {
         });
     } else { next(); }
 
-
-
-
-
-
 };
 
 module.exports = { verificaToken, verificaAdmin_Role }
